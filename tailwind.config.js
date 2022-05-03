@@ -2,10 +2,22 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
-      brand: {
-        500: '#8257e6',
-      }
+      colors: {
+        brand: {
+          500: '#8257e6',
+          300: '#996DFF'
+        }
+      },
+      borderRadius: {
+        md: '4px',
+      }      
     },
   },
-  plugins: [],
-}
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar')
+  ],
+  variants: {
+    scrollbar: ['rounded']
+  }
+};
